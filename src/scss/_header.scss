@@ -71,7 +71,7 @@ header {
     @media (max-width: 1900px) {
       font-size: 25px;
     }
-    @media (max-width: 1600px) {
+    @media (max-width: 1650px) {
       font-size: 22px;
     }
     .timeWork {
@@ -85,6 +85,9 @@ header {
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+        @media (max-width: 1700px) {
+          font-size: 15px;
+        }
       }
     }
   }
@@ -97,7 +100,7 @@ header {
     @media (max-width: 1900px) {
       max-width: 625px;
     }
-    @media (max-width: 1600px) {
+    @media (max-width: 1620px) {
       margin: 0 50px 0 50px;
       max-width: 405px;
     }
@@ -129,6 +132,7 @@ header {
     gap: 63px;
     @media (max-width: 1900px) {
       margin: 0 70px 0 70px;
+      white-space: nowrap;
     }
     .item {
       cursor: pointer;
