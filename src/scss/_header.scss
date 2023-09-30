@@ -9,6 +9,8 @@ header {
     align-items: center;
     justify-content: space-between;
     &__item {
+      text-decoration: none;
+
       color: #000;
       font-family: Montserrat;
       font-size: 20px;
@@ -112,6 +114,13 @@ header {
       width: 100%;
       background-color: #f4f4f4;
       border: none;
+      &::placeholder {
+        font-family: Montserrat;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
     }
     &::after {
       content: "";
@@ -256,5 +265,4 @@ header {
       margin-top: 20px;
     }
   }
-
 }

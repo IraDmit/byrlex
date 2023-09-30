@@ -1,51 +1,72 @@
 .catalog {
-  display: grid;
   position: absolute;
   position: relative;
   opacity: 0;
-  grid-template-columns: 2fr 1fr 1fr;
-  grid-gap: 30px;
-  background-color: #f4f4f4;
+  display: grid;
+  grid-template-columns: 1.2fr repeat(4, 1fr);
   padding: 10px;
   width: 100%;
   left: 0;
-  //   top: 347px;
   transition: 0.3s;
   visibility: hidden;
-  .close{
+  grid-gap: 60px;
+  background-color: #fff;
+
+  .close {
     display: none;
   }
-  &__item {
-    background-color: #fff;
-    img {
-      height: 234px;
-      width: 100%;
-      object-fit: cover;
+  &__type,
+  &__color {
+    grid-row: 1 / span 2;
+    &__title {
+      font-size: 20px;
+      font-weight: 600;
+      font-family: Montserrat;
+      font-style: normal;
+      line-height: normal;
     }
-    &__description {
-      padding: 26px;
-      .title {
-        font-family: Montserrat;
-        font-size: 30px;
-        font-style: normal;
-        font-weight: 800;
-        line-height: normal;
+    &__item {
+      font-family: Montserrat;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+      img {
+        margin-right: 10px;
+        width: 25px;
+        height: 25px;
       }
-      .text {
-        color: #59657b;
-        font-family: Montserrat;
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-      }
-      @media (max-width: 768px) {
-        .title {
-          font-size: 23px;
-        }
-        .text {
-          font-size: 16px;
-        }
+    }
+  }
+  &__color {
+    grid-area: 1 / 5 / 4 / 5;
+  }
+  &__size,
+  &__surface,
+  &__purpose,
+  &__country,
+  &__drawing,
+  &__room {
+    &__title {
+      font-size: 20px;
+      font-weight: 600;
+      font-family: Montserrat;
+      font-style: normal;
+      line-height: normal;
+    }
+    &__item {
+      margin-top: 10px;
+      font-family: Montserrat;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      img {
+        width: 25px;
+        height: 25px;
       }
     }
   }
@@ -55,7 +76,7 @@
   }
   @media (max-width: 1100px) {
     position: fixed;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     bottom: unset;
     overflow-y: scroll;
     height: 100vh;
@@ -65,20 +86,27 @@
     height: 100%;
     transition: 0.3s;
     top: 0;
-    .close{
-        display: block;
-    };
-    &__item:nth-child(3n-1) {
-      grid-column: 1 / span 2;
+    grid-gap: 30px;
+    grid-template-rows: masonry;
+    .close {
+      display: block;
     }
     &.open {
       left: 0;
     }
+    &__type,
+    &__color {
+      grid-row: unset;
+      grid-area: unset;
+    }
   }
-  @media (max-width: 600px) {
-    grid-template-columns: 1fr;
+  @media (max-width: 768px) {
+    grid-template-columns: 1.2fr 1fr;
     &__item {
       grid-column: unset !important ;
     }
+  }
+  @media (max-width: 540px){
+    grid-template-columns: 1fr;
   }
 }
