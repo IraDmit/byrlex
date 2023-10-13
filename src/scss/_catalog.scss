@@ -1,3 +1,8 @@
+a {
+  text-decoration: none;
+  color: #000;
+}
+
 .catalog {
   position: absolute;
   position: relative;
@@ -50,6 +55,8 @@
   &__country,
   &__drawing,
   &__room {
+    display: flex;
+    flex-direction: column;
     &__title {
       font-size: 20px;
       font-weight: 600;
@@ -106,7 +113,7 @@
       grid-column: unset !important ;
     }
   }
-  @media (max-width: 540px){
+  @media (max-width: 540px) {
     grid-template-columns: 1fr;
   }
 }
